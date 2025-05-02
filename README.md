@@ -1,4 +1,6 @@
 **Real-Time Digit Recognition Android App**
+
+
 ![image](https://github.com/user-attachments/assets/39d27ca3-5637-45b1-bb6e-645550935eda)
 
 **Overview**
