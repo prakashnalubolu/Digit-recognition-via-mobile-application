@@ -1,8 +1,5 @@
 **Real-Time Digit Recognition Android App**
 
-
-![image](https://github.com/user-attachments/assets/39d27ca3-5637-45b1-bb6e-645550935eda)
-
 **Overview**
 
 This repository brings together two core components of a complete digit recognition pipeline:
@@ -97,3 +94,6 @@ This section details how to integrate and deploy your trained digit recognition 
    * Display recognized digit string on a transparent `digitView` overlaying the `PreviewView`.
    * Show FPS by counting frames in a time window and latency per inference.
    * Use `runOnUiThread` to update UI elements from background threads.
+  
+
+    ![image](https://github.com/user-attachments/assets/39d27ca3-5637-45b1-bb6e-645550935eda)
