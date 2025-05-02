@@ -1,18 +1,19 @@
 **Real-Time Digit Recognition Android App**
 
 **Overview**
-This repository brings together two core components of a complete text recognition pipeline:
 
-- **Model Training** – A Convolutional Recurrent Neural Network (CRNN) built and trained using PyTorch, designed to recognize text from images with Connectionist Temporal Classification (CTC) decoding.
-- **Android Deployment** – An Android app leveraging PyTorch Mobile and CameraX to perform on-device, real-time text recognition, with low latency and offline capabilities.
-By combining these modules, you can train a custom text recognition model for your own dataset and immediately deploy it to a mobile device.CTC) for decoding, this app delivers low-latency, offline text recognition suitable for a variety of use cases—from quick digit scanning to immersive augmented reality overlays.
+This repository brings together two core components of a complete digit recognition pipeline:
+
+- **Model Training** – A Convolutional Recurrent Neural Network (CRNN) built and trained using PyTorch, designed to recognize digit from images with Connectionist Temporal Classification (CTC) decoding.
+- **Android Deployment** – An Android app leveraging PyTorch Mobile and CameraX to perform on-device, real-time digit recognition, with low latency and offline capabilities.
+By combining these modules, you can train a custom digit recognition model for your own dataset and immediately deploy it to a mobile device.CTC) for decoding, this app delivers low-latency, offline digit recognition suitable for a variety of use cases—from quick digit/text scanning to immersive augmented reality overlays.
 
 **Key Features**
 
-* **On-Device Inference**: Run text recognition entirely on the device—no internet connection required.
-* **Real-Time Performance**: Capture and process camera frames at interactive frame rates, displaying recognized text with live FPS and latency indicators.
+* **On-Device Inference**: Run digit recognition entirely on the device—no internet connection required.
+* **Real-Time Performance**: Capture and process camera frames at interactive frame rates, displaying recognized digit with live FPS and latency indicators.
 * **Robust Preprocessing Pipeline**: Convert raw YUV camera frames into normalized grayscale tensors, ensuring consistent input for the CRNN model.
-* **CTC Decoding**: Employ greedy and beam-search decoding strategies to translate model logits into human-readable text.
+* **CTC Decoding**: Employ greedy and beam-search decoding strategies to translate model logits into human-readable digit.
 * **User-Friendly UI**: Intuitive layout with a live camera preview, recognition overlay, and performance metrics; includes a start/stop recognize toggle.
 * **Modular Architecture**: Three clearly separated modules (Camera, Recognition, UI) facilitate maintainability and extensibility.
 * **Performance Optimization**: Optional support for model quantization, multi-threaded execution, and bitmap pooling to maximize speed and reduce memory footprint.
@@ -20,7 +21,7 @@ By combining these modules, you can train a custom text recognition model for yo
 ## Project Explanation
 
 * **Training Pipeline**: Preprocess images and labels, train a Convolutional Recurrent Neural Network (CRNN) with CTC loss in PyTorch, and evaluate using Word/Character Error Rates.
-* **Mobile App**: Integrate the trained model into an Android app via PyTorch Mobile and CameraX for offline, real-time OCR with live text overlays.
+* **Mobile App**: Integrate the trained model into an Android app via PyTorch Mobile and CameraX for offline, real-time OCR with live digit overlays.
 
 ## Model Architecture
 
@@ -64,7 +65,7 @@ This section details how to integrate and deploy your trained digit recognition 
 2. **Model Integration**
 
    * Copy `best_model.pt` into `app/src/main/assets/`.
-   * Load the model in your `TextRecognizer` class using `Module.load()` from PyTorch Mobile.
+   * Load the model in your `digitRecognizer` class using `Module.load()` from PyTorch Mobile.
    * Initialize SoLoader in `Application.onCreate()` or before model loading.
 
 3. **Permissions & CameraX**
@@ -90,6 +91,6 @@ This section details how to integrate and deploy your trained digit recognition 
 
 6. **UI Overlay**
 
-   * Display recognized digit string on a transparent `TextView` overlaying the `PreviewView`.
+   * Display recognized digit string on a transparent `digitView` overlaying the `PreviewView`.
    * Show FPS by counting frames in a time window and latency per inference.
    * Use `runOnUiThread` to update UI elements from background threads.
