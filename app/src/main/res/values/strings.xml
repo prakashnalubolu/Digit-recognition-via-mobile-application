@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HCI_Project3</string>
+    <string name="start">Start</string>
+    <string name="hello_first_fragment">Hello from the first fragment!</string>
+    <string name="settings">Settings</string>
+    <string name="pause_record">Pause Record</string>
+    <string name="group_sequence_skh">Group Sequence: SKH</string>
+    <string name="members">Members:</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="captured_photo">Captured photo</string>
+
+</resources>
